@@ -7,6 +7,16 @@
       "factory": "./src/generators/nx-autotag-libs/generator",
       "schema": "./src/generators/nx-autotag-libs/schema.json",
       "description": "nx-autotag-libs generator"
+    },
+    "ng-tagged-lib": {
+      "factory": "./src/generators/ng-tagged-lib/generator",
+      "schema": "./src/generators/ng-tagged-lib/schema.json",
+      "description": "angular library automatically tagged by directory or name + given tag."
+    },
+    "workspace-tagged-lib": {
+      "factory": "./src/generators/workspace-tagged-lib/generator",
+      "schema": "./src/generators/workspace-tagged-lib/schema.json",
+      "description": "workspace library automatically tagged by directory or name + given tag."
     }
   }
 }

@@ -2,11 +2,11 @@ import { createTreeWithEmptyWorkspace } from '@nrwl/devkit/testing';
 import { Tree, readProjectConfiguration } from '@nrwl/devkit';
 
 import generator from './generator';
-import { NxAutotagLibsGeneratorSchema } from './schema';
+import { NgTaggedLibGeneratorSchema } from './schema';
 
-describe('nx-autotag-libs generator', () => {
+describe('ng-tagged-lib generator', () => {
   let appTree: Tree;
-  const options: NxAutotagLibsGeneratorSchema = { name: 'test' };
+  const options: NgTaggedLibGeneratorSchema = { name: 'test' };
 
   beforeEach(() => {
     appTree = createTreeWithEmptyWorkspace();
