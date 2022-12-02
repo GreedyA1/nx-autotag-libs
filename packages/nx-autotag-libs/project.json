@@ -1,0 +1,61 @@
+{
+  "name": "nx-autotag-libs",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/nx-autotag-libs/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/nx-autotag-libs",
+        "main": "packages/nx-autotag-libs/src/index.ts",
+        "tsConfig": "packages/nx-autotag-libs/tsconfig.lib.json",
+        "assets": [
+          "packages/nx-autotag-libs/*.md",
+          {
+            "input": "./packages/nx-autotag-libs/src",
+            "glob": "**/!(*.ts)",
+            "output": "./src"
+          },
+          {
+            "input": "./packages/nx-autotag-libs/src",
+            "glob": "**/*.d.ts",
+            "output": "./src"
+          },
+          {
+            "input": "./packages/nx-autotag-libs",
+            "glob": "generators.json",
+            "output": "."
+          },
+          {
+            "input": "./packages/nx-autotag-libs",
+            "glob": "executors.json",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "packages/nx-autotag-libs/**/*.ts",
+          "packages/nx-autotag-libs/generators.json",
+          "packages/nx-autotag-libs/executors.json",
+          "packages/nx-autotag-libs/package.json"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "packages/nx-autotag-libs/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

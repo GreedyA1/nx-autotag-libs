@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "name": "nx-autotag-libs",
+  "version": "0.0.1",
+  "generators": {
+    "nx-autotag-libs": {
+      "factory": "./src/generators/nx-autotag-libs/generator",
+      "schema": "./src/generators/nx-autotag-libs/schema.json",
+      "description": "nx-autotag-libs generator"
+    }
+  }
+}
